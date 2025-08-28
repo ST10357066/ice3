@@ -97,9 +97,48 @@ The project is configured for optimal Netlify deployment:
 - **Build Command:** `npm run build`
 - **Publish Directory:** `dist`
 - **Node Version:** 18.17.0
+- **Environment:** NODE_ENV = "production"
 - **SPA Routing:** Automatic redirects configured
 - **Security Headers:** Added for better security
 - **Asset Optimization:** Static assets cached for performance
+
+## 🐛 Troubleshooting Deployment Issues
+
+### Common Netlify Configuration Errors:
+
+**1. "Can't redefine existing key" Error:**
+- **Cause:** Duplicate environment variable definitions in `netlify.toml`
+- **Solution:** Use only the `[build.environment]` table format (not inline format)
+
+**2. "Command not found" Error:**
+- **Cause:** Node/npm not available in build environment
+- **Solution:** Ensure `NODE_VERSION` is set correctly in `netlify.toml`
+
+**3. "Build failed" Error:**
+- **Cause:** Missing dependencies or build script issues
+- **Solution:** Test locally with `npm run build` before deploying
+
+### Deployment Checklist:
+
+- ✅ `netlify.toml` exists with correct configuration
+- ✅ Build command works locally (`npm run build`)
+- ✅ All dependencies listed in `package.json`
+- ✅ Static assets in `public/` folder
+- ✅ No conflicting environment variable definitions
+- ✅ Node version specified in `.nvmrc` and `netlify.toml`
+
+### Manual Verification:
+
+Run this command to check your deployment readiness:
+```bash
+node deploy-check.js
+```
+
+**If you encounter issues:**
+1. Check the Netlify build logs for specific error messages
+2. Verify all files are committed to your Git repository
+3. Ensure your repository is public (or you have proper permissions)
+4. Try a manual drag-and-drop deployment of the `dist` folder
 
 
 

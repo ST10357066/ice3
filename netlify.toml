@@ -5,12 +5,11 @@
   # Directory to publish (build output directory)
   publish = "dist"
 
-  # Node version
-  environment = { NODE_VERSION = "18" }
-
 [build.environment]
   # Set production environment
   NODE_ENV = "production"
+  # Node version
+  NODE_VERSION = "18"
 
 # Redirect rules for SPA
 [[redirects]]
