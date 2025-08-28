@@ -8,8 +8,8 @@
 [build.environment]
   # Set production environment
   NODE_ENV = "production"
-  # Node version
-  NODE_VERSION = "18"
+  # Use a Node version compatible with Vite 7 if Netlify pulls it
+  NODE_VERSION = "20.19.0"
 
 # Redirect rules for SPA
 [[redirects]]
