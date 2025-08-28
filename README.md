@@ -94,7 +94,7 @@ A modern React application built with Vite, TypeScript, and SWC showcasing a per
 
 The project is configured for optimal Netlify deployment:
 
-- **Build Command:** `npm run build`
+- **Build Command:** `npm run build` (runs `npx tsc && vite build`)
 - **Publish Directory:** `dist`
 - **Node Version:** 18.17.0
 - **Environment:** NODE_ENV = "production"
@@ -114,7 +114,11 @@ The project is configured for optimal Netlify deployment:
 - **Cause:** Node/npm not available in build environment
 - **Solution:** Ensure `NODE_VERSION` is set correctly in `netlify.toml`
 
-**3. "Build failed" Error:**
+**3. "tsc: not found" Error:**
+- **Cause:** TypeScript compiler not available globally in Netlify environment
+- **Solution:** Use `npx tsc` instead of `tsc` in build scripts
+
+**4. "Build failed" Error:**
 - **Cause:** Missing dependencies or build script issues
 - **Solution:** Test locally with `npm run build` before deploying
 
