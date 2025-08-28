@@ -94,7 +94,7 @@ A modern React application built with Vite, TypeScript, and SWC showcasing a per
 
 The project is configured for optimal Netlify deployment:
 
-- **Build Command:** `npm run build` (runs `vite build`)
+- **Build Command:** `npm run build` (runs `npx vite build`)
 - **Publish Directory:** `dist`
 - **Node Version:** 18.17.0
 - **Environment:** NODE_ENV = "production"
