@@ -6,9 +6,9 @@
   publish = "dist"
 
 [build.environment]
-  # Set production environment
-  NODE_ENV = "production"
-  # Use a Node version compatible with Vite 7 if Netlify pulls it
+  # Ensure devDependencies (like Vite) are installed during build
+  NPM_FLAGS = "--include=dev"
+  # Use a Node version compatible with newer Vite if needed
   NODE_VERSION = "20.19.0"
 
 # Redirect rules for SPA
